@@ -1,0 +1,10 @@
+fixtures:
+  repositories:
+    stdlib:
+      repo: "https://github.com/Adaptavist/puppet-stdlib"
+    apache:
+      repo: "https://github.com/Adaptavist/puppet-apache"
+    concat: 
+      repo: "https://github.com/Adaptavist/puppet-concat.git"
+  symlinks:
+    webserver: "#{source_dir}"
