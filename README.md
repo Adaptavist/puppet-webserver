@@ -1,4 +1,5 @@
 # WebServer Module
+[![Build Status](https://travis-ci.org/Adaptavist/puppet-webserver.svg?branch=master)](https://travis-ci.org/Adaptavist/puppet-webserver)
 
 ## Overview
 
