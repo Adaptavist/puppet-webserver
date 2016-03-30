@@ -9,6 +9,7 @@ class webserver::apache(
     $authz_crowd_mods       = $webserver::params::authz_crowd_mods,
     $authz_crowd_package    = $webserver::params::authz_crowd_package,
     $webserver_users        = {},
+    $purge_configs          = $webserver::params::purge_configs,
   ) inherits webserver::params {
   validate_array($default_mods)
 
@@ -55,7 +56,7 @@ class webserver::apache(
     default_mods        => $default_mods,
     default_confd_files => false,
     default_vhost       => false,
-    purge_configs       => true,
+    purge_configs       => str2bool($purge_configs),
     server_signature    => 'Off',
     server_tokens       => 'Prod',
     trace_enable        => 'Off',
