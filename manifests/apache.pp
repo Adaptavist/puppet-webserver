@@ -25,11 +25,10 @@ class webserver::apache(
   validate_array($mods)
 
   if ( str2bool($crowd_auth) or str2bool($crowd_svn_auth) ){
-      
       # Make sure repo where this package is located is registered
       package {$authz_crowd_package:
       }
-      
+
       if( str2bool($crowd_svn_auth) ){
         $authz_mods = $authz_svn_crowd_mods
         if ($dav_svn_authz_path == undef or $dav_svn_authz_location == undef){
@@ -63,6 +62,6 @@ class webserver::apache(
   }
   Apache::Mod<||> -> Webserver::Apache::Htpasswd<||>
   create_resources('webserver::apache::htpasswd', $webserver_users)
-  
+
   apache::mod { $mods : }
 }

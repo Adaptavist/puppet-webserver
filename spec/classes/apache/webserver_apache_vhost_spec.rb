@@ -64,7 +64,7 @@ describe 'webserver::apache::vhosts', :type => 'class' do
       :concat_basedir => '/var/lib/puppet/concat',
     }}
     it do
-      should contain_webserver__apache
+      should contain_class('webserver::apache')
     end    
   end
   

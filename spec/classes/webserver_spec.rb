@@ -12,8 +12,8 @@ describe 'webserver', :type => 'class' do
       }}
     it do
       should contain_anchor('webserver::apache::start').that_comes_before('Class[webserver::apache]')
-      should contain_webserver__apache.that_notifies('Class[webserver::apache::vhosts]')
-      should contain_webserver__apache__vhosts.that_notifies('Anchor[webserver::apache::end]')
+      should contain_class('webserver::apache').that_notifies('Class[webserver::apache::vhosts]')
+      should contain_class('webserver::apache::vhosts').that_notifies('Anchor[webserver::apache::end]')
       should_not contain_selboolean('httpd_can_network_relay')
       should_not contain_selboolean('httpd_can_network_connect')
     end    
