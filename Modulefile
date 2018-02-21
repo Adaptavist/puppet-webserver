@@ -1,5 +1,5 @@
 name 'adaptavist-webserver'
-version '1.0.0'
+version '1.0.1'
 source 'https://github.com/Adaptavist/puppet-webserver.git'
 author 'adaptavist'
 summary 'webserver Module' 

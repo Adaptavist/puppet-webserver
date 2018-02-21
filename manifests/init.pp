@@ -9,10 +9,10 @@ class webserver(
 
   case $server_type{
     apache: {
-      anchor { 'webserver::apache::start': } ->
-      Class['webserver::apache'] ~>
-      Class['webserver::apache::vhosts'] ~>
-      anchor { 'webserver::apache::end': }
+      anchor { 'webserver::apache::start': }
+      -> Class['webserver::apache']
+      ~> Class['webserver::apache::vhosts']
+      ~> anchor { 'webserver::apache::end': }
 
       class { 'webserver::apache':
         default_mods   => $default_mods,

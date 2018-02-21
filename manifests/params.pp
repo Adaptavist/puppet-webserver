@@ -12,4 +12,7 @@ class webserver::params{
         'Debian' => 'mod-authnz-crowd',
         'RedHat' => 'mod_authnz_crowd',
       }
+    $manage_user = true
+    $manage_group = true
 }
+
