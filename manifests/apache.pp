@@ -10,6 +10,8 @@ class webserver::apache(
     $authz_crowd_package    = $webserver::params::authz_crowd_package,
     $webserver_users        = {},
     $purge_configs          = $webserver::params::purge_configs,
+    $manage_user            = $webserver::params::manage_user,
+    $manage_group           = $webserver::params::manage_group,
   ) inherits webserver::params {
   validate_array($default_mods)
 
@@ -59,6 +61,8 @@ class webserver::apache(
     server_signature    => 'Off',
     server_tokens       => 'Prod',
     trace_enable        => 'Off',
+    manage_user         => str2bool($manage_user),
+    manage_group        => str2bool($manage_group),
   }
   Apache::Mod<||> -> Webserver::Apache::Htpasswd<||>
   create_resources('webserver::apache::htpasswd', $webserver_users)
