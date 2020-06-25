@@ -1,5 +1,5 @@
 name 'adaptavist-webserver'
-version '1.0.1'
+version '1.0.2'
 source 'https://github.com/Adaptavist/puppet-webserver.git'
 author 'adaptavist'
 summary 'webserver Module' 
@@ -12,3 +12,4 @@ project_page 'https://github.com/Adaptavist/puppet-webserver'
 ## Add dependencies, if any:
 dependency 'puppetlabs/stdlib', '>= 2.4.0'
 dependency 'puppetlabs/apache'
+dependency 'puppetlabs/selinux_core' '>= 1.0.4'
