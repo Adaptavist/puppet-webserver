@@ -6,5 +6,7 @@ fixtures:
       repo: "https://github.com/Adaptavist/puppet-apache"
     concat: 
       repo: "https://github.com/Adaptavist/puppet-concat.git"
+    selinux_core:
+      repo: "https://github.com/Adaptavist/puppetlabs-selinux_core"
   symlinks:
     webserver: "#{source_dir}"
